@@ -16,9 +16,11 @@ const SideBar = () => {
       <div className="flex h-[100%] w-full flex-col justify-start">
         {/* Top Logo */}
         <div className="z-50 flex min-h-[56px] w-64 items-center justify-between bg-white px-6 pt-3 dark:bg-black">
-          <div className="text-xl font-bold text-gray-800 dark:text-white">
-            VPROJECT
-          </div>
+          <a href="/">
+            <div className="text-xl font-bold text-gray-800 dark:text-white">
+              VPROJECT
+            </div>
+          </a>
         </div>
         {/* Team */}
         <div className="flex items-center gap-5 border-y-[1.5px] border-gray-200 px-8 py-4 dark:border-gray-700">
