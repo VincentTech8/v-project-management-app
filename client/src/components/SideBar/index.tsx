@@ -24,11 +24,14 @@ import { useAppDispatch, useAppSelector } from "@/app/redux";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { setIsSidebarCollapsed } from "@/state";
+import { useGetProjectsQuery } from "@/state/api";
+import Project from "@/app/projects/[id]/page";
 
 const SideBar = () => {
   const [showProjects, setShowProjects] = useState(true);
   const [showPriority, setShowPriority] = useState(true);
 
+  const { data: projects } = useGetProjectsQuery();
   const dispatch = useAppDispatch();
   const isSidebarCollapsed = useAppSelector(
     (state) => state.global.isSidebarCollapsed,
@@ -65,7 +68,7 @@ const SideBar = () => {
           <Image src="/logo.png" alt="Logo" width={40} height={40} />
           <div>
             <h3 className="text-md font-bold tracking-wide dark:text-gray-200">
-              VPROJECT TEAM
+              VINN   TEAM
             </h3>
             <div className="mt-1 flex items-start gap-2">
               <LockIcon className="mt-[0.1rem] size-3 text-gray-500 dark:text-gray-400" />
@@ -95,6 +98,17 @@ const SideBar = () => {
             <ChevronDown className="size-5" />
           )}
         </button>
+
+        {/* PROJECTS LIST */}
+        {showProjects &&
+          projects?.map((project) => (
+            <SidebarLink
+              key={project.id}
+              icon={Briefcase}
+              label={project.name}
+              href={`/projects/${project.id}`}
+            />
+          ))}
 
         {/* PRIORITIES LINKS */}
         <button
