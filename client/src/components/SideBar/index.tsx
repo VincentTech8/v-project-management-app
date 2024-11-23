@@ -25,7 +25,6 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { setIsSidebarCollapsed } from "@/state";
 import { useGetProjectsQuery } from "@/state/api";
-import Project from "@/app/projects/[id]/page";
 
 const SideBar = () => {
   const [showProjects, setShowProjects] = useState(true);
