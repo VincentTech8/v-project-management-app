@@ -67,7 +67,7 @@ const SideBar = () => {
           <Image src="/logo.png" alt="Logo" width={40} height={40} />
           <div>
             <h3 className="text-md font-bold tracking-wide dark:text-gray-200">
-              VINN   TEAM
+              VINN TEAM
             </h3>
             <div className="mt-1 flex items-start gap-2">
               <LockIcon className="mt-[0.1rem] size-3 text-gray-500 dark:text-gray-400" />
